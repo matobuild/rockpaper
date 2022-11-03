@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RockPaper</title>
     <link rel="stylesheet" href="style.css">
+    <script src="index.js" defer></script>
 </head>
 
 <body>
@@ -15,21 +16,23 @@
     </div>
 
     <div class="choices">
-        <div class="choice">
+        <button id="rock" class="choice">
             <img src="https://images.unsplash.com/photo-1525857597365-5f6dbff2e36e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
                 alt="rock-image">
-        </div>
-        <div class="choice">
+        </button>
+        <button id="paper" class="choice">
             <img src="https://images.unsplash.com/photo-1595113316349-9fa4eb24f884?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1472&q=80"
                 alt="paper-image">
-        </div>
-        <div class="choice">
+        </button>
+        <button id="scissor" class="choice">
             <img src="https://images.unsplash.com/photo-1503792501406-2c40da09e1e2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1473&q=80"
                 alt="scissor-image">
-            </div=>
-        </div>
+        </button>
+    </div>
 
-        <script src="index.js"></script>
+    <div id="result">
+    </div>
+
 </body>
 
 </html>

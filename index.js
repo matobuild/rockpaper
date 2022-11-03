@@ -1,3 +1,7 @@
+let playerScore = 0;
+let computerScore = 0;
+let rounds = 1;
+
 const output = ["Rock", "Paper", "Scissor"];
 
 function getComputerChoice() {
@@ -5,13 +9,9 @@ function getComputerChoice() {
   return output[randomResult];
 }
 
-
 function convertToOutput(string) {
   return string[0].toUpperCase() + string.slice(1).toLowerCase();
 }
-
-let playerScore = 0;
-let computerScore = 0;
 
 function playRound(playerSelection, computerSelection) {
   playerChoice = convertToOutput(playerSelection);
@@ -32,14 +32,63 @@ function playRound(playerSelection, computerSelection) {
     playerScore += 1;
     return "You Won! Paper beats Rock";
   } else if (playerChoice == "Paper" && computerChoice == "Scissor") {
+    computerScore += 1;
     return "You Lose! Scissor beats Paper";
   } else if (playerChoice == "Scissor" && computerChoice == "Paper") {
-    computerScore += 1;
+    playerScore += 1;
     return "You Won! Scissor beats Paper";
   } else if (playerChoice == "Scissor" && computerChoice == "Rock") {
+    computerScore += 1;
     return "You Lose! Rock beats Scissor";
   }
+}
 
+
+
+const buttons = document.querySelectorAll('button');
+
+
+buttons.forEach((button) => {
+  
+  button.addEventListener('click', () => {
+
+    if (rounds === 1) {
+      removeAll();
+    }
+
+    report = playRound(button.id, getComputerChoice());
+    display(report);
+    display('This is ' + rounds + ' round. The score is player = ' + playerScore + ' and computer is ' + computerScore);
+    
+    rounds += 1;
+    if (rounds == 6) {
+      if (playerScore > computerScore){
+        display("FINAL WINNER IS PLAYER!!!🥳");
+    } else {
+        display("FINAL WINNER IS COMPUTER, YOU LOSE🤣");
+    }
+    playerScore = 0;
+    computerScore = 0;
+    rounds = 1;
+    }
+
+  });
+
+});
+
+function display(result) {
+  const container = document.querySelector('#result'); 
+
+  const content = document.createElement('div');
+  content.classList.add('content')
+  content.textContent = result;
+  content.style.textAlign = 'center';
+  
+  container.appendChild(content);
+}
+
+function removeAll() {
+  document.querySelectorAll('.content').forEach(e => e.remove());
 }
 
 // function game() {
@@ -61,6 +110,6 @@ function playRound(playerSelection, computerSelection) {
 //     console.log("FINAL WINNER IS COMPUTER, YOU LOSE🤣");
 // }
 
-// }
+// // }
 
 // game();
