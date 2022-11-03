@@ -42,25 +42,25 @@ function playRound(playerSelection, computerSelection) {
 
 }
 
-function game() {
+// function game() {
 
-    for (let index = 0; index < 5; index++) {
-        const playerSelection = prompt("what is your hand ?");
-        const computerSelection = getComputerChoice();
-        console.log(playRound(playerSelection, computerSelection));     
+//     for (let index = 0; index < 5; index++) {
+//         const playerSelection = prompt("what is your hand ?");
+//         const computerSelection = getComputerChoice();
+//         console.log(playRound(playerSelection, computerSelection));     
         
-        //count score
-        console.log(playerScore);
-        console.log(computerScore);
-        console.log("current score is " + playerScore + ":" + computerScore);
-    }
-//report winer and loser
-if (playerScore > computerScore){
-    console.log("FINAL WINNER IS PLAYER!!!🥳");
-} else {
-    console.log("FINAL WINNER IS COMPUTER, YOU LOSE🤣");
-}
+//         //count score
+//         console.log(playerScore);
+//         console.log(computerScore);
+//         console.log("current score is " + playerScore + ":" + computerScore);
+//     }
+// //report winer and loser
+// if (playerScore > computerScore){
+//     console.log("FINAL WINNER IS PLAYER!!!🥳");
+// } else {
+//     console.log("FINAL WINNER IS COMPUTER, YOU LOSE🤣");
+// }
 
-}
+// }
 
-game();
+// game();
